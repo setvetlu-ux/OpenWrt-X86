@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-22.04
 
+    permissions:
+      contents: write
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -27,13 +30,9 @@ jobs:
         cp ../.config ./
         make defconfig
 
-    - name: Compile
+    - name: Compile OpenWrt
       run: |
         cd openwrt
         make -j$(nproc) || make -j1 V=s
 
-    - name: Upload
-      uses: actions/upload-artifact@v3
-      with:
-        name: OpenWrt-X86-10G
-        path: openwrt/bin/targets
+    - name: Upload Firmware
