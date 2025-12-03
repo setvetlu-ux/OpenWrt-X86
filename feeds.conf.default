@@ -1,0 +1,6 @@
+src-git packages https://github.com/openwrt/packages
+src-git luci https://github.com/openwrt/luci
+src-git routing https://github.com/openwrt/routing
+src-git telephony https://github.com/openwrt/telephony
+src-git passwall https://github.com/xiaorouji/openwrt-passwall
+src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2
